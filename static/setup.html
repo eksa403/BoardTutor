@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BoardTutor - AI Mathematics Tutor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="shell">
+        <header class="hero">
+            <div class="brand-mark">BT</div>
+            <div>
+                <pS class="eyebrow">PERSONALIZED LEARNING</p>
+                <h1>BoardTutor</h1>
+                <p class="subtitle">AI BOARD MATHEMATICS TUTOR</p>
+            </div>
+        </header>
+
+        <p><a href="/">← Back to Home</a></p>
+
+        <!-- LESSON SETUP -->
+        <section class="setup panel">
+            <h2>SET UP YOUR LESSON</h2>
+
+            <div class="name-row">
+                <label>
+                    LEARNER NAME:
+                    <input id="name" maxlength="60"
+                           value="Student">
+                </label>
+
+                <label>
+                    LEVEL:
+                    <select id="level">
+                        <option>Class 8</option>
+                        <option>Class 10</option>
+                        <option>Competitive Exam</option>
+                    </select>
+                </label>
+
+                <label>
+                    TOPIC:
+                    <input id="topic" maxlength="120"
+                           value="Linear equations"
+                           placeholder="Enter mathematics topic">
+                </label>
+
+                <label>
+                    DIFFICULTY:
+                    <select id="difficulty">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+                    </select>
+                </label>
+            </div>
+        </section>
+
+        <!-- LEARNING MODES -->
+        <section class="setup panel">
+            <h2>CHOOSE YOUR LEARNING MODE</h2>
+
+            <div class="mode-row" role="group"
+                 aria-label="Learning mode">
+                <button type="button" class="mode active"
+                        data-mode="Learn">Learn</button>
+                <button type="button" class="mode"
+                        data-mode="Practice">Practice</button>
+                <button type="button" class="mode"
+                        data-mode="Quiz">Quiz</button>
+                <button type="button" class="mode"
+                        data-mode="Ask a Doubt">Ask a Doubt</button>
+            </div>
+        </section>
+
+        <!-- TUTOR CHAT -->
+        <section class="setup panel">
+            <div class="chat-heading">
+                <div>
+                    <h2 id="modeTitle">Learn mode</h2>
+                </div>
+
+                <div class="score">
+                    <strong id="attempts">0</strong>
+                    <span>attempts this session</span>
+                </div>
+            </div>
+
+            <div id="chat" class="chat" aria-live="polite">
+                <div class="bubble bot">
+                     Let's Get Started
+                </div>
+            </div>
+
+            <form id="questionForm">
+                <label for="message">CHATAREA</label>
+
+                <textarea id="message" rows="3"
+                    maxlength="1500" required
+                    placeholder="For example: Solve 2x + 5 = 17 step by step..."></textarea>
+
+                <div class="form-bottom">
+                    <span>Maximum 1,500 characters</span>
+                    <button id="send" type="submit">
+                        Ask BoardTutor →
+                    </button>
+                </div>
+            </form>
+
+            <div id="error" class="error" role="alert" hidden></div>
+        </section>
+
+        <!-- LEARNING PROGRESS -->
+        <section class="setup panel">
+            <h2>LEARNING PROGRESS</h2>
+            <p>Your summary is kept in this page session only.</p>
+
+            <div class="stats">
+                <div>
+                    <strong id="questionsCount">0</strong>
+                    <span>Questions sent</span>
+                </div>
+                <div>
+                    <strong id="correctCount">—</strong>
+                    
+                </div>
+            </div>
+
+            <button id="clear" class="text-button" type="button">
+                Clear session
+            </button>
+        </section>
+
+        <footer>
+            BoardTutor prototype · AI-generated answers can make mistakes.
+            Check important calculations.
+        </footer>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
